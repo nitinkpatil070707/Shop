@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Restaurant Landing Page</title>
+<script src="./vendor/react.js"></script>
+<script src="./vendor/react-dom.js"></script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&amp;family=DM+Sans:wght@400;500;700&amp;display=swap">
+<style>
+body{margin:0}
+html{scroll-behavior:smooth}
+a{color:inherit}
+.btn{text-decoration:none}
+.btn:hover{filter:brightness(1.08)}
+.navlink{text-decoration:none}
+.navlink:hover{text-decoration:underline}
+</style>
+</helmet>
+<div style="background: #0F2A22; color: #F3EFE6; font-family: 'DM Sans', system-ui, sans-serif; font-size: 18px; line-height: 1.55">
+
+<!-- Header -->
+<header style="max-width: 1160px; margin: 0 auto; padding: 20px 24px; box-sizing: border-box; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px">
+<div style="font-family: 'Bricolage Grotesque', system-ui, sans-serif; font-weight: 800; font-size: 26px; letter-spacing: -0.02em">[RESTAURANT NAME]</div>
+<nav style="display: flex; flex-wrap: wrap; align-items: center; gap: 24px">
+<a class="navlink" href="#menu" style="font-weight: 500; padding: 12px 0">Menu</a>
+<a class="navlink" href="#visit" style="font-weight: 500; padding: 12px 0">Visit</a>
+<a class="btn" href="{{ orderUrl }}" style="background: {{accent}}; color: #0F2A22; font-weight: 700; padding: 12px 24px; border-radius: 999px; min-height: 24px">Order online</a>
+</nav>
+</header>
+
+<!-- Hero -->
+<section style="max-width: 1160px; margin: 0 auto; padding: clamp(32px, 6vw, 72px) 24px clamp(48px, 8vw, 96px); box-sizing: border-box; display: flex; flex-wrap: wrap; align-items: center; gap: 48px">
+<div style="flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 24px">
+<div style="font-weight: 700; font-size: 14px; letter-spacing: 0.14em; text-transform: uppercase; color: {{accent}}">[CUISINE] · [NEIGHBORHOOD]</div>
+<h1 style="margin: 0; font-family: 'Bricolage Grotesque', system-ui, sans-serif; font-weight: 800; font-size: clamp(40px, 6.4vw, 76px); line-height: 1.02; letter-spacing: -0.03em">Skip the apps. Order straight from our kitchen.</h1>
+<p style="margin: 0; font-size: 20px; max-width: 520px; color: #C9D3CD">[One sentence about your restaurant and what you are known for.]</p>
+<div style="display: flex; flex-wrap: wrap; gap: 16px; padding-top: 8px">
+<a class="btn" href="{{ orderUrl }}" style="background: {{accent}}; color: #0F2A22; font-weight: 700; font-size: 18px; padding: 16px 32px; border-radius: 999px">Order online</a>
+<a class="btn" href="#menu" style="border: 2px solid #F3EFE6; color: #F3EFE6; font-weight: 700; font-size: 18px; padding: 14px 30px; border-radius: 999px">See the menu</a>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 8px 24px; padding-top: 8px; color: #C9D3CD; font-size: 16px">
+<span>[Pickup details]</span>
+<span>[Delivery details]</span>
+</div>
+</div>
+<div style="flex: 1 1 360px; min-width: 0; min-height: 420px; border-radius: 24px; background: #1B3D32; border: 2px dashed #4E7A69; display: flex; align-items: center; justify-content: center; text-align: center; padding: 24px; box-sizing: border-box; color: #C9D3CD; font-size: 16px">[HERO PHOTO: your best-looking dish]</div>
+</section>
+
+<!-- Why order direct -->
+<section style="background: #1B3D32">
+<div style="max-width: 1160px; margin: 0 auto; padding: clamp(48px, 7vw, 80px) 24px; box-sizing: border-box; display: flex; flex-direction: column; gap: 40px">
+<h2 style="margin: 0; font-family: 'Bricolage Grotesque', system-ui, sans-serif; font-weight: 700; font-size: clamp(30px, 4vw, 44px); letter-spacing: -0.02em; line-height: 1.1">Why order direct</h2>
+<div style="display: flex; flex-wrap: wrap; gap: 32px">
+<div style="flex: 1 1 260px; min-width: 0; display: flex; flex-direction: column; gap: 8px">
+<h3 style="margin: 0; font-size: 22px; font-weight: 700; color: {{accent}}">Straight to our kitchen</h3>
+<p style="margin: 0; color: #C9D3CD">Your order comes to us with no middleman, so it is made fresh and made right. [Edit to fit your service.]</p>
+</div>
+<div style="flex: 1 1 260px; min-width: 0; display: flex; flex-direction: column; gap: 8px">
+<h3 style="margin: 0; font-size: 22px; font-weight: 700; color: {{accent}}">No marketplace fees on your meal</h3>
+<p style="margin: 0; color: #C9D3CD">Ordering with us supports our team directly. [Add your direct-order perk or promo code.]</p>
+</div>
+<div style="flex: 1 1 260px; min-width: 0; display: flex; flex-direction: column; gap: 8px">
+<h3 style="margin: 0; font-size: 22px; font-weight: 700; color: {{accent}}">Pickup or delivery</h3>
+<p style="margin: 0; color: #C9D3CD">[Describe your pickup and delivery options, areas, and timing.]</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Menu -->
+<section id="menu" style="background: #F3EFE6; color: #0F2A22">
+<div style="max-width: 1160px; margin: 0 auto; padding: clamp(48px, 7vw, 88px) 24px; box-sizing: border-box; display: flex; flex-direction: column; gap: 40px">
+<div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px">
+<h2 style="margin: 0; font-family: 'Bricolage Grotesque', system-ui, sans-serif; font-weight: 700; font-size: clamp(30px, 4vw, 44px); letter-spacing: -0.02em; line-height: 1.1">Favorites</h2>
+<p style="margin: 0; color: #3F5249; max-width: 420px">[A short line about your menu.]</p>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 28px">
+
+<article style="display: flex; flex-direction: column; gap: 12px">
+<div style="aspect-ratio: 4 / 3; border-radius: 16px; background: #E2DBCB; border: 2px dashed #A79F8B; display: flex; align-items: center; justify-content: center; color: #4A5A52; font-size: 15px">[DISH PHOTO]</div>
+<div style="display: flex; justify-content: space-between; gap: 16px; align-items: baseline">
+<h3 style="margin: 0; font-size: 22px; font-weight: 700">[DISH NAME]</h3>
+<span style="font-weight: 700">[$00]</span>
+</div>
+<p style="margin: 0; color: #3F5249; font-size: 16px">[Short description: key ingredients, how it is prepared.]</p>
+</article>
+
+<article style="display: flex; flex-direction: column; gap: 12px">
+<div style="aspect-ratio: 4 / 3; border-radius: 16px; background: #E2DBCB; border: 2px dashed #A79F8B; display: flex; align-items: center; justify-content: center; color: #4A5A52; font-size: 15px">[DISH PHOTO]</div>
+<div style="display: flex; justify-content: space-between; gap: 16px; align-items: baseline">
+<h3 style="margin: 0; font-size: 22px; font-weight: 700">[DISH NAME]</h3>
+<span style="font-weight: 700">[$00]</span>
+</div>
+<p style="margin: 0; color: #3F5249; font-size: 16px">[Short description: key ingredients, how it is prepared.]</p>
+</article>
+
+<article style="display: flex; flex-direction: column; gap: 12px">
+<div style="aspect-ratio: 4 / 3; border-radius: 16px; background: #E2DBCB; border: 2px dashed #A79F8B; display: flex; align-items: center; justify-content: center; color: #4A5A52; font-size: 15px">[DISH PHOTO]</div>
+<div style="display: flex; justify-content: space-between; gap: 16px; align-items: baseline">
+<h3 style="margin: 0; font-size: 22px; font-weight: 700">[DISH NAME]</h3>
+<span style="font-weight: 700">[$00]</span>
+</div>
+<p style="margin: 0; color: #3F5249; font-size: 16px">[Short description: key ingredients, how it is prepared.]</p>
+</article>
+
+<article style="display: flex; flex-direction: column; gap: 12px">
+<div style="aspect-ratio: 4 / 3; border-radius: 16px; background: #E2DBCB; border: 2px dashed #A79F8B; display: flex; align-items: center; justify-content: center; color: #4A5A52; font-size: 15px">[DISH PHOTO]</div>
+<div style="display: flex; justify-content: space-between; gap: 16px; align-items: baseline">
+<h3 style="margin: 0; font-size: 22px; font-weight: 700">[DISH NAME]</h3>
+<span style="font-weight: 700">[$00]</span>
+</div>
+<p style="margin: 0; color: #3F5249; font-size: 16px">[Short description: key ingredients, how it is prepared.]</p>
+</article>
+
+<article style="display: flex; flex-direction: column; gap: 12px">
+<div style="aspect-ratio: 4 / 3; border-radius: 16px; background: #E2DBCB; border: 2px dashed #A79F8B; display: flex; align-items: center; justify-content: center; color: #4A5A52; font-size: 15px">[DISH PHOTO]</div>
+<div style="display: flex; justify-content: space-between; gap: 16px; align-items: baseline">
+<h3 style="margin: 0; font-size: 22px; font-weight: 700">[DISH NAME]</h3>
+<span style="font-weight: 700">[$00]</span>
+</div>
+<p style="margin: 0; color: #3F5249; font-size: 16px">[Short description: key ingredients, how it is prepared.]</p>
+</article>
+
+<article style="display: flex; flex-direction: column; gap: 12px">
+<div style="aspect-ratio: 4 / 3; border-radius: 16px; background: #E2DBCB; border: 2px dashed #A79F8B; display: flex; align-items: center; justify-content: center; color: #4A5A52; font-size: 15px">[DISH PHOTO]</div>
+<div style="display: flex; justify-content: space-between; gap: 16px; align-items: baseline">
+<h3 style="margin: 0; font-size: 22px; font-weight: 700">[DISH NAME]</h3>
+<span style="font-weight: 700">[$00]</span>
+</div>
+<p style="margin: 0; color: #3F5249; font-size: 16px">[Short description: key ingredients, how it is prepared.]</p>
+</article>
+
+</div>
+<div>
+<a class="btn" href="{{ orderUrl }}" style="display: inline-block; background: #0F2A22; color: #F3EFE6; font-weight: 700; font-size: 18px; padding: 16px 32px; border-radius: 999px">Order the full menu online</a>
+</div>
+</div>
+</section>
+
+<!-- Visit -->
+<section id="visit">
+<div style="max-width: 1160px; margin: 0 auto; padding: clamp(48px, 7vw, 88px) 24px; box-sizing: border-box; display: flex; flex-wrap: wrap; gap: 48px">
+<div style="flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 28px">
+<h2 style="margin: 0; font-family: 'Bricolage Grotesque', system-ui, sans-serif; font-weight: 700; font-size: clamp(30px, 4vw, 44px); letter-spacing: -0.02em; line-height: 1.1">Come say hi</h2>
+<div style="display: flex; flex-direction: column; gap: 4px">
+<div style="font-weight: 700; font-size: 14px; letter-spacing: 0.14em; text-transform: uppercase; color: {{accent}}">Address</div>
+<div>[STREET ADDRESS]<br>[CITY, STATE ZIP]</div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 4px">
+<div style="font-weight: 700; font-size: 14px; letter-spacing: 0.14em; text-transform: uppercase; color: {{accent}}">Hours</div>
+<div>[Mon–Thu: HOURS]<br>[Fri–Sat: HOURS]<br>[Sun: HOURS]</div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 4px">
+<div style="font-weight: 700; font-size: 14px; letter-spacing: 0.14em; text-transform: uppercase; color: {{accent}}">Call us</div>
+<div>[PHONE NUMBER]</div>
+</div>
+</div>
+<div style="flex: 1 1 360px; min-width: 0; min-height: 360px; border-radius: 24px; background: #1B3D32; border: 2px dashed #4E7A69; display: flex; align-items: center; justify-content: center; text-align: center; padding: 24px; box-sizing: border-box; color: #C9D3CD; font-size: 16px">[MAP OR STOREFRONT PHOTO]</div>
+</div>
+</section>
+
+<!-- Final CTA -->
+<section style="background: {{accent}}; color: #0F2A22">
+<div style="max-width: 1160px; margin: 0 auto; padding: clamp(40px, 6vw, 72px) 24px; box-sizing: border-box; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px">
+<h2 style="margin: 0; font-family: 'Bricolage Grotesque', system-ui, sans-serif; font-weight: 800; font-size: clamp(30px, 4.4vw, 52px); letter-spacing: -0.02em; line-height: 1.05; max-width: 640px">Hungry? Order direct and we will start cooking.</h2>
+<a class="btn" href="{{ orderUrl }}" style="background: #0F2A22; color: #F3EFE6; font-weight: 700; font-size: 18px; padding: 16px 32px; border-radius: 999px">Order online</a>
+</div>
+</section>
+
+<!-- Footer -->
+<footer style="max-width: 1160px; margin: 0 auto; padding: 32px 24px; box-sizing: border-box; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; color: #C9D3CD; font-size: 15px">
+<div>© [YEAR] [RESTAURANT NAME]</div>
+<div>[Instagram] · [Facebook] · [Contact email]</div>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"accent":{"editor":"color","default":"#F2B138","options":["#F2B138","#F26B4E","#7FD1A8","#8FB8F2"]},"orderUrl":{"editor":"text","default":"https://order.example.com"},"$preview":{"width":1280,"height":3100}}'>
+class Component extends DCLogic {
+renderVals() {
+return {
+accent: this.props.accent ?? '#F2B138',
+orderUrl: this.props.orderUrl ?? 'https://order.example.com'
+};
+}
+}
+</script>
+</body>
+</html>
